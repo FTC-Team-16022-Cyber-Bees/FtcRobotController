@@ -4,16 +4,15 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorEx;
+// import com.qualcomm.robotcore.hardware.DcMotorEx;
 
-@Disabled
 @TeleOp
 public class Sample_Mecanum extends LinearOpMode {
 
-    private DcMotorEx Front_Right;
-    private DcMotorEx Front_Left;
-    private DcMotorEx Back_Right;
-    private DcMotorEx Back_Left;
+    private DcMotor Front_Right;
+    private DcMotor Front_Left;
+    private DcMotor Back_Right;
+    private DcMotor Back_Left;
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -22,10 +21,10 @@ public class Sample_Mecanum extends LinearOpMode {
 
         // Assigning the motors on the robot to the variables we've created to operate
         // the motors
-        Back_Right = hardwareMap.get(DcMotorEx.class, "Back_Right");
-        Back_Left = hardwareMap.get(DcMotorEx.class, "Back_Left");
-        Front_Right = hardwareMap.get(DcMotorEx.class, "Front_Right");
-        Front_Left = hardwareMap.get(DcMotorEx.class, "Front_Left");
+        Back_Right = hardwareMap.get(DcMotor.class, "Back_Right");
+        Back_Left = hardwareMap.get(DcMotor.class, "Back_Left");
+        Front_Right = hardwareMap.get(DcMotor.class, "Front_Right");
+        Front_Left = hardwareMap.get(DcMotor.class, "Front_Left");
 
         // Set directions of motors for left and right side of drivetrain
         Front_Left.setDirection(DcMotor.Direction.REVERSE);
